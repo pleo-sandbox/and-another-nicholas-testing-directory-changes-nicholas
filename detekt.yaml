@@ -1,0 +1,20 @@
+# You can use this Detekt configuration file for various things:
+# - rule set and rule properties
+# - build failure
+# - console reports
+# - output reports
+# - processors
+# for more info, see: https://detekt.dev/docs/introduction/configurations/
+
+# This is an example on how you can add an exception to allow TODO comments.
+# You can decide to keep this rule or remove it for your service
+style:
+  ForbiddenComment:
+    active: true
+    allowedPatterns: TODO
+    comments:
+      - value: TODO
+        reason: Please provide your own implementation instead of this example.
+  # Disabled because it is taken care of by the ktlint in `.editorconfig`
+  MaxLineLength:
+    active: false

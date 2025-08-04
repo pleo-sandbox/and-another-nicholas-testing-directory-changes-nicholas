@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.14.0",
+    "generators": {
+      "node": {
+        "GIT_USER_ID": "pleo-io",
+        "GIT_REPO_ID": "and-another-nicholas-testing-directory-changes-nicholas",
+        "generatorName": "typescript-node",
+        "output": "./output/node",
+        "glob": "../pleo-and-another-nicholas-testing-directory-changes-nicholas-rest/src/main/resources/and-another-nicholas-testing-directory-changes-nicholas-openapi.yaml",
+        "additionalProperties": {
+          "npmVersion": "4.1.9",
+          "npmName": "@pleo-io/and-another-nicholas-testing-directory-changes-nicholas-client-node",
+          "npmRepository": "https://npm.pkg.github.com",
+          "supportsES6": "false",
+          "enumPropertyNaming": "UPPERCASE"
+        }
+      }
+    }
+  }
+}

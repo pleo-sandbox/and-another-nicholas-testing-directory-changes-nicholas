@@ -1,0 +1,26 @@
+# IMPORTANT!
+#
+# Do not add artifacts produced by development tools that are developer
+# specific and are not required or provided by the repository
+#
+# See https://sebastiandedeyne.com/setting-up-a-global-gitignore-file/
+pleo-and-another-nicholas-testing-directory-changes-nicholas-client-kotlin/*
+!pleo-and-another-nicholas-testing-directory-changes-nicholas-client-kotlin/build.gradle.kts
+!pleo-and-another-nicholas-testing-directory-changes-nicholas-client-kotlin/.openapi-generator-ignore
+
+pleo-and-another-nicholas-testing-directory-changes-nicholas-client-js/*
+!pleo-and-another-nicholas-testing-directory-changes-nicholas-client-js/openapitools.json
+!pleo-and-another-nicholas-testing-directory-changes-nicholas-client-js/package.json
+
+.gradle/
+.idea/
+.kotlin/
+target/
+out/
+build/
+*.iml
+
+*/.classpath
+**/.project
+**/.settings
+*/bin

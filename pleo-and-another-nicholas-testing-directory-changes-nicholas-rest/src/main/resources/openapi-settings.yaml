@@ -1,0 +1,34 @@
+---
+openapi: "3.0.1"
+info:
+  version: "0.0.0"
+  title: "And Another Nicholas Testing Directory Changes Nicholas API"
+  description: "And Another Nicholas Testing Directory Changes Nicholas OpenAPI definitions"
+  termsOfService: "https://pleo.io/terms/"
+  contact:
+    email: "apiteam@pleo.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+servers:
+- url: "https://and-another-nicholas-testing-directory-changes-nicholas.dev.pleo.io/rest"
+  description: "Product-dev"
+- url: "https://and-another-nicholas-testing-directory-changes-nicholas.staging.pleo.io/rest"
+  description: "Product-staging"
+tags:
+- name: "AndAnotherNicholasTestingDirectoryChangesNicholas"
+  description: "This resource is associated with the AndAnotherNicholasTestingDirectoryChangesNicholas API"
+security:
+- basicAuth: []
+- bearerAuth: []
+components:
+  securitySchemes:
+    basicAuth:
+      type: "http"
+      scheme: "basic"
+      description: "HTTP Basic Access Authentication"
+    bearerAuth:
+      type: "http"
+      scheme: "bearer"
+      bearerFormat: "JWT"
+      description: "HTTP Bearer Token Authentication Using JSON Web Token"

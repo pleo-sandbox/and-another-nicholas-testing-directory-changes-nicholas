@@ -1,0 +1,27 @@
+{
+  "name": "pleo-and-another-nicholas-testing-directory-changes-nicholas-client",
+  "version": "1.0.0",
+  "description": "The client for And Another Nicholas Testing Directory Changes Nicholas",
+  "main": "index.js",
+  "scripts": {
+    "generate:api": "openapi-generator-cli generate"
+  },
+  "repository": {
+    "url": "https://github.com/pleo-io/and-another-nicholas-testing-directory-changes-nicholas"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@pleo-io"
+  },
+  "keywords": [
+    "and-another-nicholas-testing-directory-changes-nicholas"
+  ],
+  "author": "pleo-io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pleo-io/and-another-nicholas-testing-directory-changes-nicholas/issues"
+  },
+  "homepage": "https://github.com/pleo-io/and-another-nicholas-testing-directory-changes-nicholas#readme",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.21.0"
+  }
+}

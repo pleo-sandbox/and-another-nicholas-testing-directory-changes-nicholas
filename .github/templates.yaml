@@ -1,0 +1,29 @@
+version: v44.1.22
+
+files:
+  - .github/workflows/dev_deploy.yaml
+  - .github/workflows/dev_deploy_revert.yaml
+  - .github/workflows/close-stale-prs.yaml
+  - .github/workflows/security-analysis.yaml
+  - .github/workflows/security-container-scanning.yaml
+  - .github/workflows/verify-release.yaml
+  - .github/workflows/deploy_k8s_feature_ecr.yaml
+  - .github/workflows/delete_k8s_feature.yaml
+  - .github/workflows/pr-help.yaml
+  - .github/workflows/k8s_ci.yaml
+  - .github/workflows/trigger-flux-application-registration.yaml
+  - .github/workflows/deployed_handler.yaml
+  - .github/workflows/flux_kustomization_handler.yaml
+  - .github/workflows/format-kotlin.yaml
+  - .github/workflows/on_successful_deployment.yaml
+  - .github/workflows/on_failed_deployment.yaml
+  - .github/workflows/renovate_dependency_management.yaml
+  - .github/workflows/kotlin_service_cicd_starter.yaml
+  - .autorc.json
+
+values:
+  deploymentFailureNotificationSlackChannel: oncall-team-devx-new
+  releaseOpenAPIClients: true
+  ignoreOpenAPIErrors: false
+  jdkVersion: "21"
+  renovateCronjobSchedule: "23 7 * * 1-5" # This is UTC -> At 08:23 CET / 09:23 CEST on every day-of-week from Monday through Friday.

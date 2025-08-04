@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="And Another Nicholas Testing Directory Changes Nicholas [RunLocal]" type="JetRunConfigurationType">
+    <envs>
+      <env name="AWS_PROFILE" value="product-dev.AdministratorAccess" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="io.pleo.andanothernicholastestingdirectorychangesnicholas.app.AndAnotherNicholasTestingDirectoryChangesNicholasKt" />
+    <module name="and-another-nicholas-testing-directory-changes-nicholas.pleo-and-another-nicholas-testing-directory-changes-nicholas-app.main" />
+    <shortenClasspath name="NONE" />
+    <option name="VM_PARAMETERS" value="-Dconfig=config-local.yml" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

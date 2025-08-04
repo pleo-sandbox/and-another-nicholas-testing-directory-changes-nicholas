@@ -1,0 +1,85 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: and-another-nicholas-testing-directory-changes-nicholas
+spec:
+  chart:
+    spec:
+      chart: application
+      version: "4.6.2"
+  values:
+    securityLevel: internal
+    replicas: 2
+    imageTag: "79a109c39e945d7ffc3339a6a5f0d799c5a2cee2"
+    migrationContainers:
+      database:
+        args: ["flyway-migrate"]
+        env: []
+    container:
+      port: 8080
+      env: []
+      livenessProbe:
+        path: /rest/health/liveness
+      readinessProbe:
+        path: /rest/health
+      startupProbe:
+        path: /rest/health
+      resources:
+        requests:
+          cpu: 100m
+          memory: 800Mi
+    metrics:
+      port: 8081
+      path: /metrics
+    ingress:
+      visibility: internal
+    # Read more on how to enable monitors and their values here: https://sre.pleo.io/docs/kubernetes-workloads/how-to-guides/enable-monitors
+    # Reminder: Configure `kafkaLogError` and `kafkaConsumerLag` monitors if your service is using kafka
+    monitors:
+      containersRestarting:
+        enabled: true
+      errorCancelingStatement:
+        enabled: true
+      jvmGcSpiking:
+        enabled: true
+      kafkaLogErrors:
+        enabled: true
+    configuration:
+      path: /config
+      files:
+        application.properties: |-
+          #######################
+          # APP SPECIFIC
+          #######################
+
+          #######################
+          # KAFKA
+          #######################
+          kafka.producer.prefix=production
+          kafka.group_id=production-and-another-nicholas-testing-directory-changes-nicholas
+
+          kafka.consumer.disabled=true
+          kafka.consumer.brokers=msk1.pleo.io:9092,msk2.pleo.io:9092,msk3.pleo.io:9092
+          kafka.consumer.example.topics=[\"production-example-entity\"]
+
+          kafka.producer.example.topics=[\"production-example\"]
+          kafka.producer.brokers=msk1.pleo.io:9092,msk2.pleo.io:9092,msk3.pleo.io:9092
+
+          #######################
+          # SQS / SNS
+          #######################
+          sqs.dlq.example.url=https://sqs.eu-west-1.amazonaws.com/946577128174/and-another-nicholas-testing-directory-changes-nicholas-example-dlq
+
+          #######################
+          # REST
+          #######################
+          io.pleo.clients.kerberos.endpoint=http://kerberos.kerberos/api/v1/
+          swagger.authorization.endpoint=http://kerberos.kerberos/app
+          # TODO: Add your external clients endpoints here.
+          elara.endpoint=http://elara.elara/rest
+
+          #######################
+          # DB
+          #######################
+          dataSource.serverName=andanothernicholastestingdirectorychangesnicholas.db.pleo.io

@@ -1,0 +1,30 @@
+logging:
+  level: INFO
+  loggers:
+    "org.eclipse.jetty": INFO
+    "io.swagger": INFO
+    # Part of the default config and warns if can't find any file, normal most of the time
+    "com.netflix.config.sources.URLConfigurationSource": ERROR
+    # Spams every time it polls dynamodb
+    "com.netflix.config.sources.DynamoDbConfigurationSource": WARN
+  appenders:
+    - type: console
+      layout:
+        type: custom-json
+        timestampFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        additionalFields:
+          commit_sha: "{{commit_sha}}"
+
+server:
+  type: pleo
+  adminConnectors:
+    - type: http
+      port: 8081
+  requestLog:
+    appenders:
+      - type: console
+        filterFactories:
+          - type: health-and-metrics-filter-factory
+        layout:
+          type: access-json
+          timestampFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

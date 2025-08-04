@@ -1,0 +1,79 @@
+---
+# (required) Owner must map to a valid automated-teams team name, which should be a child team of https://github.com/orgs/pleo-io/teams/automated-teams
+# The team name must not include the `pleo-io/` prefix
+steward: team-devx-new
+
+# (optional) The description for this component will be picked up from the related GitHub repository. If you need to provide a different one, you can use this field
+# description: This is a description about your component
+
+# Any tags relevant to your components and/or mandated by platform teams
+tags:
+
+  # Describes type of component the repository defines.
+  #
+  # Use:
+  #  - `type: service` for web services (moons)
+  #  - `type: application` for downloadable software (such as an iOS/Android app,
+  #     CLI tool, standalone executable). This also includes e.g. web apps.
+  #  - `type: library` for software used by other components
+  #  - `type: configuration` for repos that contain pure configuration (such as
+  #    setup of DangerJS or Renovate).
+  #  - `type: documentation` for repos that mostly contain documentation.
+  #  - `type: hiring-challenge` for our hiring challenges.
+  type: service
+  
+  # (All are required on services) The data classification tags are required to document what type of data your component is handling
+  # For the full documentation, have a look here: https://docs.google.com/document/d/1H7kGlTSfyq-1LkyNtT3OUmN22OQwWlSkRsoNSo2OTlM/
+
+  # Possible values: PublicData, InternalData, ConfidentialData, HighlyConfidentialData.
+  # DataClassification: 'InternalData'
+
+  # Any information relating to an identified or identifiable natural person (data subject).
+  # PersonalData: "false"
+
+  # Personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs etc.
+  # SensitivePersonalData: "false"
+
+  # Any data and information that Users enter into the production system of Pleo’s Cloud Service or that Customer derives from its use of and stores in Pleo’s Cloud Service
+  # CustomerData: "false"
+
+  # Data related to payment card information, which includes Card Holder Data and Sensitive Authentication Data
+  # PCIData: "false"
+
+  # Information collection about customers for the purpose of account management
+  # CustomerAccountData: "false"
+
+  # Information required for the purpose of preventing, detecting and investigating unusual and suspicious transactions, and supporting law enforcement with any requests for information.
+  # AMLData: "false"
+
+# (optional) Any internal or external tool linked to this application such as monitors, logs, documentation, third-party apps, etc.
+tools:
+  - name: Logs
+    category: logs
+    url: https://app.datadoghq.eu/logs?query=service%3Aand-another-nicholas-testing-directory-changes-nicholas%20env%3Aproduct-staging%20&cols=&index=&messageDisplay=inline&refresh_mode=sliding&stream_sort=desc&viz=stream&live=true
+    environment: product-staging
+  - name: Metrics
+    category: metrics
+    url: https://app.datadoghq.eu/apm/services/and-another-nicholas-testing-directory-changes-nicholas/operations/command_execution/resources?env=product-staging
+    environment: product-staging
+  - name: Logs
+    category: logs
+    url: https://app.datadoghq.eu/logs/livetail?query=service%3Aand-another-nicholas-testing-directory-changes-nicholas%20env%3Aproduct-dev&cols=&index=&messageDisplay=inline&refresh_mode=sliding&storage=live&stream_sort=desc&viz=stream&live=true
+    environment: product-dev
+  - name: Metrics
+    category: metrics
+    url: https://app.datadoghq.eu/apm/services/and-another-nicholas-testing-directory-changes-nicholas/operations/command_execution/resources?env=product-dev
+    environment: product-dev
+
+# (optional) Relevant repositories which are relevant to this component excluding the repository hosting this file. The current repository will be linked by default in Port.
+# Example: Terraform folder which hosts the architecture definition for a backend service (moon)
+related_repositories:
+  - name: pleo-io/terraform
+    path: /components/moons/and-another-nicholas-testing-directory-changes-nicholas
+    provider: github
+    display_name: and-another-nicholas-testing-directory-changes-nicholas @ terraform
+
+# (optional) The notion page related to this application or owning team
+# notion: https://www.notion.so/pleo/
+# (optional) A linear view with issues relevant to this application or a link to the linear team for the owning team
+# linear: https://linear.app/pleo/

@@ -1,0 +1,59 @@
+{
+  "owner": "pleo-io",
+  "repo": "and-another-nicholas-testing-directory-changes-nicholas",
+  "author": "pleo-bot-auto-versioning <ops+auto_versioning@pleo.io>",
+  "onlyPublishWithReleaseLabel": false,
+  "noDefaultLabels": true,
+  "labels": [
+    {
+      "name": "major",
+      "releaseType": "major",
+      "changelogTitle": "💥 Major changes",
+      "description": "Increment the major version when merged",
+      "color": "#C5000B"
+    },
+    {
+      "name": "minor",
+      "releaseType": "minor",
+      "changelogTitle": "🎁 Features",
+      "description": "Increment the minor version when merged",
+      "color": "#F1A60E"
+    },
+    {
+      "name": "patch",
+      "releaseType": "patch",
+      "changelogTitle": "🐞 Fixes",
+      "description": "Increment the patch version when merged",
+      "color": "#870048"
+    },
+    {
+      "name": "internal",
+      "changelogTitle": "🏠 Internal",
+      "description": "Changes only affect the internal API",
+      "releaseType": "none",
+      "color": "#696969",
+      "default": true
+    }
+  ],
+  "plugins": [
+    [
+      "git-tag"
+    ],
+    [
+      "omit-release-notes",
+      {
+        "username": [
+          "pleo-bot"
+        ]
+      }
+    ],
+    [
+      "omit-commits",
+      {
+        "email": [
+          "github-actions+update-image-tag@pleo.io"
+        ]
+      }
+    ]
+  ]
+}

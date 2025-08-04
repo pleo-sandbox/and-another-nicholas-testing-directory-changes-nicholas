@@ -1,0 +1,546 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: apiteam@pleo.io
+  description: And Another Nicholas Testing Directory Changes Nicholas OpenAPI definitions
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://pleo.io/terms/
+  title: And Another Nicholas Testing Directory Changes Nicholas API
+  version: 0.0.0
+servers:
+- description: Product-dev
+  url: https://and-another-nicholas-testing-directory-changes-nicholas.dev.pleo.io/rest
+- description: Product-staging
+  url: https://and-another-nicholas-testing-directory-changes-nicholas.staging.pleo.io/rest
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- description: This resource is associated with the AndAnotherNicholasTestingDirectoryChangesNicholas API
+  name: AndAnotherNicholasTestingDirectoryChangesNicholas
+paths:
+  /health:
+    get:
+      description: Returns the readiness health of the service.It checks the app health
+        and the database connection health
+      operationId: checkReadiness
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                data:
+                  healthy: true
+                  message: Readiness health-check passed
+                  time: 2024-07-22T15:36:49.826044985Z
+              schema:
+                $ref: "#/components/schemas/DataResponseResult"
+          description: Service readiness check successful
+      summary: Returns the readiness health of the service
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+  /health/liveness:
+    get:
+      description: Returns the liveness health of the service. It checks the API is
+        responsive
+      operationId: checkLiveness
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                data:
+                  healthy: true
+                  message: Liveness health-check passed
+                  time: 2024-07-22T15:36:49.826044985Z
+              schema:
+                $ref: "#/components/schemas/DataResponseResult"
+          description: Service liveness check successful
+      summary: Returns the liveness health of the service
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+  /v1/holidays:
+    get:
+      description: Fetches bank holidays by a given currency code
+      operationId: bankHolidaysFromElara
+      parameters:
+      - description: The currency code used to derive the bank holidays
+        example: EUR
+        in: query
+        name: currency_code
+        required: true
+        schema:
+          type: string
+          enum:
+          - UNDEFINED
+          - AED
+          - AFN
+          - ALL
+          - AMD
+          - ANG
+          - AOA
+          - ARS
+          - AUD
+          - AWG
+          - AZN
+          - BAM
+          - BBD
+          - BDT
+          - BGN
+          - BHD
+          - BIF
+          - BMD
+          - BND
+          - BOB
+          - BOV
+          - BRL
+          - BSD
+          - BTN
+          - BWP
+          - BYN
+          - BYR
+          - BZD
+          - CAD
+          - CDF
+          - CHE
+          - CHF
+          - CHW
+          - CLF
+          - CLP
+          - CNY
+          - COP
+          - COU
+          - CRC
+          - CUC
+          - CUP
+          - CVE
+          - CZK
+          - DJF
+          - DKK
+          - DOP
+          - DZD
+          - EGP
+          - ERN
+          - ETB
+          - EUR
+          - FJD
+          - FKP
+          - GBP
+          - GEL
+          - GHS
+          - GIP
+          - GMD
+          - GNF
+          - GTQ
+          - GYD
+          - HKD
+          - HNL
+          - HRK
+          - HTG
+          - HUF
+          - IDR
+          - ILS
+          - INR
+          - IQD
+          - IRR
+          - ISK
+          - JMD
+          - JOD
+          - JPY
+          - KES
+          - KGS
+          - KHR
+          - KMF
+          - KPW
+          - KRW
+          - KWD
+          - KYD
+          - KZT
+          - LAK
+          - LBP
+          - LKR
+          - LRD
+          - LSL
+          - LTL
+          - LYD
+          - MAD
+          - MDL
+          - MGA
+          - MKD
+          - MMK
+          - MNT
+          - MOP
+          - MRO
+          - MRU
+          - MUR
+          - MVR
+          - MWK
+          - MXN
+          - MXV
+          - MYR
+          - MZN
+          - NAD
+          - NGN
+          - NIO
+          - NOK
+          - NPR
+          - NZD
+          - OMR
+          - PAB
+          - PEN
+          - PGK
+          - PHP
+          - PKR
+          - PLN
+          - PYG
+          - QAR
+          - RON
+          - RSD
+          - RUB
+          - RUR
+          - RWF
+          - SAR
+          - SBD
+          - SCR
+          - SDG
+          - SEK
+          - SGD
+          - SHP
+          - SLL
+          - SOS
+          - SRD
+          - SSP
+          - STD
+          - STN
+          - SVC
+          - SYP
+          - SZL
+          - THB
+          - TJS
+          - TMT
+          - TND
+          - TOP
+          - TRY
+          - TTD
+          - TWD
+          - TZS
+          - UAH
+          - UGX
+          - USD
+          - USN
+          - USS
+          - UYI
+          - UYU
+          - UZS
+          - VEF
+          - VES
+          - VND
+          - VUV
+          - WST
+          - XAF
+          - XAG
+          - XAU
+          - XBA
+          - XBB
+          - XBC
+          - XBD
+          - XCD
+          - XDR
+          - XOF
+          - XPD
+          - XPF
+          - XPT
+          - XSU
+          - XTS
+          - XUA
+          - XXX
+          - YER
+          - ZAR
+          - ZMW
+          - ZWL
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                data:
+                - date: 2024-01-01
+                - date: 2024-12-25
+                - date: 2024-12-26
+              schema:
+                $ref: "#/components/schemas/DataResponseListBankHoliday"
+          description: Bank holidays fetch successful
+      summary: Fetch bank holidays by given currency code
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+  /v1/movies:
+    get:
+      description: Finds movies by their name or release year
+      operationId: findMovies
+      parameters:
+      - description: The name of the movie
+        example: Die Hard
+        in: query
+        name: movie_name
+        schema:
+          type: string
+      - description: The year the movie was published
+        example: 1988
+        in: query
+        name: movie_year
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                data:
+                - director: John McTiernan
+                  id: acdcdaed-6c4d-41e4-815d-af6170cd5fa8
+                  name: Die Hard
+                  year: 1988
+              schema:
+                $ref: "#/components/schemas/DataResponseListExampleMovieRecordDto"
+          description: Matching Movies fetch successful
+      summary: Find movies by their properties
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+    post:
+      description: Adds a new movie to the service
+      operationId: addMovie
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: "#/components/schemas/ExampleMovieDto"
+        description: object representation of a movie
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                data:
+                  director: John McTiernan
+                  id: acdcdaed-6c4d-41e4-815d-af6170cd5fa8
+                  name: Die Hard
+                  year: 1988
+              schema:
+                $ref: "#/components/schemas/DataResponseExampleMovieRecordDto"
+          description: Movie create successful
+      summary: Add a movie
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+    put:
+      description: Updates the details of a movie. The movie is identified by its
+        ID
+      operationId: updateMovie
+      requestBody:
+        content:
+          application/json;charset=UTF-8:
+            schema:
+              $ref: "#/components/schemas/ExampleMovieRecordDto"
+        description: object representation of a movie
+        required: true
+      responses:
+        "200":
+          description: Movie updated successfully
+      summary: Update the details of a movie
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+  /v1/movies/{id}:
+    get:
+      description: Fetches a movie by the id assigned at creation time
+      operationId: getMovieById
+      parameters:
+      - description: The identifier of the movie
+        example: acdcdaed-6c4d-41e4-815d-af6170cd5fa8
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                data:
+                  director: John McTiernan
+                  id: acdcdaed-6c4d-41e4-815d-af6170cd5fa8
+                  name: Die Hard
+                  year: 1988
+              schema:
+                $ref: "#/components/schemas/DataResponseExampleMovieRecordDto"
+          description: Movie fetch successful
+      summary: Fetch movie by id
+      tags:
+      - AndAnotherNicholasTestingDirectoryChangesNicholas
+components:
+  schemas:
+    BankHoliday:
+      type: object
+      description: A Bank holiday
+      example:
+        date: 2024-12-25
+      properties:
+        date:
+          type: string
+          format: date
+          description: Date of the bank holiday
+          example: 2024-12-25
+      required:
+      - date
+    DataResponseExampleMovieRecordDto:
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/ExampleMovieRecordDto"
+      required:
+      - data
+    DataResponseListBankHoliday:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/BankHoliday"
+      required:
+      - data
+    DataResponseListExampleMovieRecordDto:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/ExampleMovieRecordDto"
+      required:
+      - data
+    DataResponseResult:
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/Result"
+      required:
+      - data
+    ExampleMovieDto:
+      type: object
+      description: A movie data object
+      example:
+        name: Die Hard
+        year: 1988
+        director: John McTiernan
+      properties:
+        director:
+          type: string
+          description: The director of the movie
+          example: John McTiernan
+        name:
+          type: string
+          description: The name of the movie
+          example: Die Hard
+        year:
+          type: integer
+          format: int32
+          description: The release year of the movie
+          example: 1988
+      required:
+      - director
+      - name
+      - year
+    ExampleMovieRecordDto:
+      type: object
+      description: A movie record object
+      example:
+        id: acdcdaed-6c4d-41e4-815d-af6170cd5fa8
+        name: Die Hard
+        year: 1988
+        director: John McTiernan
+      properties:
+        director:
+          type: string
+          description: The director of the movie
+          example: John McTiernan
+        id:
+          type: string
+          format: uuid
+          description: The unique identifier of the movie
+          example: acdcdaed-6c4d-41e4-815d-af6170cd5fa8
+        name:
+          type: string
+          description: The name of the movie
+          example: Die Hard
+        year:
+          type: integer
+          format: int32
+          description: The release year of the movie
+          example: 1988
+      required:
+      - director
+      - id
+      - name
+      - year
+    ExceptionInfo:
+      type: object
+      description: Error details
+      example:
+        type: INTERNAL_SERVER_ERROR
+        message: "Oops, something went wrong..."
+      properties:
+        message:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+    Result:
+      type: object
+      description: Health Check Result
+      example:
+        healthy: true
+        message: Readiness health-check passed
+        time: 2024-07-22T15:36:49.826044985Z
+      properties:
+        details:
+          type: object
+          additionalProperties:
+            type: object
+            description: Status details of the service
+            example:
+              key: {}
+          description: Status details of the service
+          example:
+            key: {}
+        error:
+          $ref: "#/components/schemas/ExceptionInfo"
+        healthy:
+          type: boolean
+          description: Status of the service
+          example: true
+        message:
+          type: string
+          description: Status description of the service
+          example: Liveness health-check passed
+        time:
+          type: string
+          format: date-time
+          description: Timestamp of the response creation
+          example: 2024-07-22T15:36:49.826044985Z
+      required:
+      - healthy
+      - time
+  securitySchemes:
+    basicAuth:
+      description: HTTP Basic Access Authentication
+      scheme: basic
+      type: http
+    bearerAuth:
+      bearerFormat: JWT
+      description: HTTP Bearer Token Authentication Using JSON Web Token
+      scheme: bearer
+      type: http

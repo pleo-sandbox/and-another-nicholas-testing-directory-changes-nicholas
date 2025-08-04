@@ -1,0 +1,13 @@
+{
+  "generatorName": "kotlin",
+  "apiPackage": "io.pleo.andanothernicholastestingdirectorychangesnicholas.api",
+  "modelPackage": "io.pleo.andanothernicholastestingdirectorychangesnicholas.models",
+  "packageName": "io.pleo.andanothernicholastestingdirectorychangesnicholas",
+  "artifactId": "pleo-and-another-nicholas-testing-directory-changes-nicholas-client-kotlin",
+  "groupId": "io.pleo",
+  "dateLibrary": "java8",
+  "enumPropertyNaming": "UPPERCASE",
+  "serializationLibrary": "jackson",
+  "nullableReturnType": false,
+  "additionalModelTypeAnnotations": "@com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)"
+}

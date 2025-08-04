@@ -1,0 +1,113 @@
+[versions]
+
+pleoOpenapiLintRulesVersion = "v2_20241007072128"
+
+jacksonVersion = "2.19.1"
+
+okhttpVersion = "4.12.0"
+
+jvmCommonsVersion = "163.1.0"
+
+elaraApiClientVersion = "5.7.0"
+
+kerberosApiClientVersion = "4.23.0"
+
+kotlinVersion = "2.2.0"
+
+kotlinCoroutinesVersion = "1.10.2"
+
+featuresVersion = "10.65.0"
+
+propVersion = "8.0.10"
+
+dropwizardTestingVersion = "3.0.14"
+
+dropwizardMetricsHealthchecksVersion = "4.2.33"
+
+logbackVersion = "1.5.18"
+
+junitVersion = "5.13.2"
+
+junitPioneerVersion = "2.3.0"
+
+googleTruthVersion = "1.4.4"
+
+awaitilityVersion = "4.3.0"
+
+postgresqlVersion = "42.7.7"
+
+testLoggerVersion = "4.0.0"
+
+springBootVersion = "3.5.3"
+
+pleoGradlePluginVersion = "20.2.27"
+
+mockkVersion = "1.14.4"
+
+pleoOpenApiTemplatesVersion = "0.5.1"
+
+[libraries]
+pleo-openapi-lint-rules = { module = "pleo-io:openapi-lint-rules", version.ref = "pleoOpenapiLintRulesVersion" }
+pleo-openapi-templates = { module = "pleo-io.openapi-templates:pleo-openapi-templates", version.ref = "pleoOpenApiTemplatesVersion" }
+pleo-app = { module = "pleo-io.jvm-commons:app", version.ref = "jvmCommonsVersion" }
+pleo-aws = { module = "pleo-io.jvm-commons:aws", version.ref = "jvmCommonsVersion" }
+pleo-config = { module = "pleo-io.jvm-commons:config", version.ref = "jvmCommonsVersion" }
+pleo-feign = { module = "pleo-io.jvm-commons:feign", version.ref = "jvmCommonsVersion" }
+pleo-kafka = { module = "pleo-io.jvm-commons:kafka", version.ref = "jvmCommonsVersion" }
+pleo-kafka-dropwizard = { module = "pleo-io.jvm-commons:kafka-dropwizard", version.ref = "jvmCommonsVersion" }
+pleo-kotlin = { module = "pleo-io.jvm-commons:kotlin", version.ref = "jvmCommonsVersion" }
+pleo-ktlint-rules = { module = "pleo-io.jvm-commons:ktlint-rules", version.ref = "jvmCommonsVersion" }
+pleo-logging = { module = "pleo-io.jvm-commons:logging", version.ref = "jvmCommonsVersion" }
+pleo-money = { module = "pleo-io.jvm-commons:money", version.ref = "jvmCommonsVersion" }
+pleo-rest = { module = "pleo-io.jvm-commons:rest", version.ref = "jvmCommonsVersion" }
+pleo-rest-models = { module = "pleo-io.jvm-commons:rest-models", version.ref = "jvmCommonsVersion" }
+pleo-utils = { module = "pleo-io.jvm-commons:utils", version.ref = "jvmCommonsVersion" }
+pleo-vanguard = { module = "pleo-io.jvm-commons:vanguard", version.ref = "jvmCommonsVersion" }
+
+pleo-kerberos-client = { module = "pleo-io.kerberos:jvm-client", version.ref = "kerberosApiClientVersion" }
+# TODO: Add your external client dependencies here.
+pleo-elara-client = { module = "pleo-io.elara:pleo-elara-client-kotlin", version.ref = "elaraApiClientVersion" }
+
+pleo-features = { module = "pleo-io:features", version.ref = "featuresVersion" }
+pleo-prop-core = { module = "io.pleo:prop-core", version.ref = "propVersion" }
+
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttpVersion" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttpVersion" }
+
+dropwizard-testing = { module = "io.dropwizard:dropwizard-testing", version.ref = "dropwizardTestingVersion" }
+dropwizard-metrics-healthchecks = { module = "io.dropwizard.metrics:metrics-healthchecks", version.ref = "dropwizardMetricsHealthchecksVersion" }
+
+swagger-integration = { module = "io.swagger.core.v3:swagger-integration-jakarta" }
+swagger-annotations = { module = "io.swagger.core.v3:swagger-annotations-jakarta" }
+
+jackson-bom = { module = "com.fasterxml.jackson:jackson-bom", version.ref = "jacksonVersion" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+jackson-datatype-jsr = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" }
+
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlinVersion" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutinesVersion" }
+kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinCoroutinesVersion" }
+
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logbackVersion" }
+
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junitVersion" }
+junit-pioneer = { module = "org.junit-pioneer:junit-pioneer", version.ref = "junitPioneerVersion" }
+
+google-truth = { module = "com.google.truth:truth", version.ref = "googleTruthVersion" }
+awaitility = { module = "org.awaitility:awaitility", version.ref = "awaitilityVersion" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockkVersion" }
+
+# Data Layer libraries
+pleo-daltest = { module = "pleo-io.jvm-commons:daltest", version.ref = "jvmCommonsVersion" }
+pleo-data-exposed = { module = "pleo-io.jvm-commons:data-exposed", version.ref = "jvmCommonsVersion" }
+pleo-data-flyway = { module = "pleo-io.jvm-commons:data-flyway", version.ref = "jvmCommonsVersion" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresqlVersion" }
+
+[bundles]
+
+[plugins]
+test-logger = { id = "com.adarshr.test-logger", version.ref = "testLoggerVersion" }
+springframework-boot = { id = "org.springframework.boot", version.ref = "springBootVersion" }
+pleo-gradle-plugin = { id = "io.pleo.gradle.plugin", version.ref = "pleoGradlePluginVersion" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
